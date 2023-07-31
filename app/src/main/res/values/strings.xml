@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">POSReports</string>
+    <string name="fromdate">From Date</string>
+    <string name="TOdate">To Date</string>
+    <string name="POSNO">Pos.NO</string>
+    <string name="itemTransactionReport">Item Transaction</string>
+    <string name="include">Include</string>
+    <string name="execlude">Execlude</string>
+
+    <string name="ItemNimber">Item Number</string>
+
+    <string name="person">Person</string>
+    <string name="user">User</string>
+    <string name="voucherType">Type</string>
+<!--    <string name="voucherType">Voucher Type</string>-->
+
+</resources>
