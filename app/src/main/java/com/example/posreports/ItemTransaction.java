@@ -15,6 +15,8 @@ public class ItemTransaction extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_item_transaction);
         myBindingItem= DataBindingUtil.setContentView(this, R.layout.activity_item_transaction);
+
+        // master*****    aaaa
 // from tahani
     }
 }
