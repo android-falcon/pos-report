@@ -16,6 +16,6 @@ public class ItemTransaction extends AppCompatActivity {
 //        setContentView(R.layout.activity_item_transaction);
         myBindingItem= DataBindingUtil.setContentView(this, R.layout.activity_item_transaction);
 
-        // master
+        // master*****    aaaa
     }
 }
