@@ -19,8 +19,8 @@
 //import androidx.appcompat.app.AppCompatActivity;
 //import androidx.core.widget.NestedScrollView;
 //
-//import com.example.user54.InventoryApp.Model.CaptionItemInfo;
-//import com.example.user54.InventoryApp.Model.GetCaptionModel;
+//import com.example.user54.InventoryApp.com.example.posreports.Model.CaptionItemInfo;
+//import com.example.user54.InventoryApp.com.example.posreports.Model.GetCaptionModel;
 //import com.google.zxing.integration.android.IntentIntegrator;
 //import com.google.zxing.integration.android.IntentResult;
 //

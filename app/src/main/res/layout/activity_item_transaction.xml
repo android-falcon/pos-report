@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-<LinearLayout
-    android:layout_width="match_parent"
+<!--<layout xmlns:tools="http://schemas.android.com/tools"-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
+<LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".ItemTransaction"
     android:padding="10dp"
@@ -80,7 +81,7 @@
             android:textSize="12sp"
             android:gravity="center"
             android:layout_weight="1"
-            android:text="@string/from_Price"/>
+            android:text="from_Price"/>
 
 
         <TextView
@@ -108,7 +109,7 @@
 
 
         <TextView
-            android:id="@+id/todate"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="5dp"
@@ -747,4 +748,4 @@
     </LinearLayout>
     </ScrollView>
 </LinearLayout>
-</layout>
+<!--</layout>-->

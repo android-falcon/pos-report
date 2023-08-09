@@ -12,6 +12,13 @@
     <string name="person">Person</string>
     <string name="user">User</string>
     <string name="voucherType">Type</string>
-<!--    <string name="voucherType">Voucher Type</string>-->
+    <string name="importData">Import Data</string>
+    <string name="getCaption">Get Caption</string>
+    <string name="getCaptionSuccesful">Get Caption Successful</string>
+    <string name="getItemTrancaction">Get Item Trancaction</string>
+    <string name="DataGet">Get Data</string>
+    <string name="TimeReport">Time Report</string>
+
+    <!--    <string name="voucherType">Voucher Type</string>-->
 
 </resources>
