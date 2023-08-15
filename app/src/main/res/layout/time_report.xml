@@ -46,13 +46,13 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
 
                 android:text="From Date"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -75,13 +75,13 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
 
                 android:text="To Date"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="08:09:20"
+                android:text="08/09/2023"
                 android:padding="5dp"
                 android:background="@drawable/back_border"
                 android:textColor="@color/black"
@@ -118,9 +118,9 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
 
                 android:textStyle="bold"
                 android:text="From Time"
@@ -134,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="08/09/2023"
+                android:text="08:09:20"
                 android:padding="5dp"
                 android:background="@drawable/back_border"
                 android:textColor="@color/black"
@@ -148,9 +148,9 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
 
                 android:textStyle="bold"
                 android:text="To Time"
@@ -249,17 +249,26 @@
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <EditText
+            <Spinner
+                android:id="@+id/spinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/back_border"
-                android:ems="10"
-                android:gravity="center"
-                android:inputType="textPersonName"
-                android:padding="5dp"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:layout_height="wrap_content" />
+
+<!--            <EditText-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/back_border"-->
+<!--                android:ems="10"-->
+<!--                android:gravity="center"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:padding="5dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="16sp" />-->
+
+
 
         </TableRow>
 

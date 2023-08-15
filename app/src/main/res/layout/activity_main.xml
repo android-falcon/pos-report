@@ -178,7 +178,7 @@
                     android:fontFamily="@font/alegreya"
                     android:gravity="center"
                     android:lineHeight="34dp"
-                    android:text=""
+                    android:text="Time Report"
                     android:textColor="@color/primarytextcolor"
                     android:textSize="20sp"
                     android:textStyle="bold" />

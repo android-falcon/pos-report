@@ -4,5 +4,7 @@
     <string name="getCaption">Get Caption</string>
     <string name="getCaptionSuccesful">Get Caption Successful</string>
     <string name="TimeReport">تقرير الدوام </string>
+    <string name="getData">Get Data</string>
+    <string name="EmploySearch">البحث</string>
 
 </resources>

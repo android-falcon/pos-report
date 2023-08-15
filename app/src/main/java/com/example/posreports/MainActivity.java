@@ -253,11 +253,12 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent1 = new Intent(MainActivity.this, ItemTransaction.class);
                     startActivity(intent1);
                     break;
+
 //
-//                case R.id.grouprepCard:
-//                    Intent intent2 = new Intent(MainActivity.this, GroupReport.class);
-//                    startActivity(intent2);
-//                    break;
+                case R.id.grouprepCard:
+                    Intent intent2 = new Intent(MainActivity.this, TimeReportActivity.class);
+                    startActivity(intent2);
+                    break;
 //
 //                case R.id.cashrepCard:
 //                    Intent intent3 = new Intent(MainActivity.this, CashReport.class);

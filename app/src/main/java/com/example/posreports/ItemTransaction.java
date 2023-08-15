@@ -16,6 +16,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.posreports.Model.CaptionItemInfo;
 import com.example.posreports.Model.GetCaptionModel;
 import com.example.posreports.Model.TransactionModel;
 
@@ -31,7 +32,7 @@ public class ItemTransaction extends AppCompatActivity {
     Spinner SEASONS,STYELS_1,USERS,SALESS,POSYS,SHELFS,COLORS,STYLES_2,BYS,COLORS_2,LENGTHS,ZONES,SDS,CLASSS,GS,BS,SIS;
     RadioButton all,salesButton,refoundButton;
     CheckBox itemBox,itemPBox,price;
-    Button ShowB;
+    TextView ShowB,exit;
     List<GetCaptionModel> AllData;
     ListView tranceList;
     trancactionListAdapter adapter;
@@ -42,6 +43,8 @@ ImportJson importJson;
             N10, N11, N12, N13, N14;
     EditText itemNo;
 
+    CaptionListAdapter adapters;
+    ListView capList;
     String DS1="", DS2="", DS3="", DS4="", DS5="", DS6="", DS7="", DS8="", DS9="", DS10="",
             DS11="", DS12="", DS13="", DS14="",ITEMOCODEs="";
     @Override
@@ -83,7 +86,7 @@ ImportJson importJson;
         itemPBox=findViewById(R.id.itemPBox);
         price=findViewById(R.id.price);
         tranceList=findViewById(R.id.list);
-
+        capList=findViewById(R.id.capList);
 
         Desc1  = findViewById(R.id.D1);
         Desc2  = findViewById(R.id.D2);
@@ -119,9 +122,17 @@ ImportJson importJson;
         itemNo=findViewById(R.id.ItemCodeEditTextTag);
 
 
+
         importJson = new ImportJson(ItemTransaction.this);
 
-        ShowB=findViewById(R.id.ShowB);
+        ShowB=findViewById(R.id.show);
+        exit=findViewById(R.id.exit);
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         AllData=new ArrayList<>();
         importJson.getFilter();
@@ -140,12 +151,18 @@ ImportJson importJson;
         Desc13 .setOnItemSelectedListener(new OnItemSelectedCodepage());
         Desc14 .setOnItemSelectedListener(new OnItemSelectedCodepage());
 
-
         ShowB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-importJson.getData();
+//importJson.getData();
+
+                if(!ITEM_NO.getText().toString().equals("")) {
+                    ITEMOCODEs=ITEM_NO.getText().toString();
+                }else {
+                    ITEMOCODEs="";
+                }
+                importJson.getDataCap(DS4,DS1,DS2,DS3,DS5,DS6,DS7,DS8,DS9,DS10,DS11,DS12,DS13,DS14,ITEMOCODEs);
 
             }
         });
@@ -307,5 +324,12 @@ importJson.getData();
 
         adapter = new trancactionListAdapter(ItemTransaction.this, captionItemInfos);
         tranceList.setAdapter(adapter);
+    }
+
+
+    public void  fillArrayDataAfterFillters(List<CaptionItemInfo> captionItemInfos){
+
+        adapters = new CaptionListAdapter(ItemTransaction.this, captionItemInfos);
+        capList.setAdapter(adapters);
     }
 }
