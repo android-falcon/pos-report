@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DailySalesReport">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_margin="5dp"-->
+<!--        >-->
+
+<!--        <TextView-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:textColor="@color/blue2"-->
+<!--            android:textSize="12sp"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="@string/fromdate"/>-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/fromdate"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/btn_stroke"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            android:padding="5dp"-->
+<!--            android:gravity="center"-->
+<!--            app:drawableEndCompat="@drawable/ic_baseline_date_range_24" />-->
+
+
+<!--        <TextView-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:textColor="@color/blue2"-->
+<!--            android:textSize="12sp"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="@string/TOdate"/>-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/todate"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/btn_stroke"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            android:padding="5dp"-->
+<!--            android:gravity="center"-->
+<!--            app:drawableEndCompat="@drawable/ic_baseline_date_range_24" />-->
+
+
+<!--    </LinearLayout>-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:layout_height="40dp">-->
+
+<!--        <TextView-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:textColor="@color/blue2"-->
+<!--            android:textSize="12sp"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_weight="1.4"-->
+<!--            android:text="@string/POSNO"/>-->
+<!--        <LinearLayout-->
+
+
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:background="@drawable/back_border"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <Spinner-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:id="@+id/PosNO"-->
+<!--                android:layout_height="match_parent"/>-->
+
+<!--        </LinearLayout>-->
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/Preivew"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:background="@drawable/btn_bg"-->
+<!--            android:drawableEnd="?android:attr/textCheckMark"-->
+<!--            android:drawableTint="@color/black"-->
+<!--            android:text="Show"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="13sp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--    </LinearLayout>-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="400dp"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:background="@drawable/back_edit_dark"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <HorizontalScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:background="@drawable/btn_stroke"-->
+<!--            >-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:background="@drawable/back_edit_dark"-->
+<!--                android:orientation="vertical">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="match_parent"-->
+
+<!--                android:background="@drawable/back_fillcolor"-->
+
+<!--                android:fontFamily="@font/alegreya_sans_bold"-->
+<!--                android:gravity="center"-->
+<!--                android:text="@string/user"-->
+<!--                android:textColor="@color/dark_blue"-->
+
+<!--                android:textSize="14sp" />-->
+
+<!--            <com.google.android.material.divider.MaterialDivider-->
+<!--                android:layout_width="2dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_marginTop="2dp"-->
+
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:layout_marginBottom="2dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="70dp"-->
+<!--                android:layout_height="match_parent"-->
+
+<!--                android:background="@drawable/back_fillcolor"-->
+<!--                android:fontFamily="@font/alegreya_sans_bold"-->
+
+<!--                android:gravity="center"-->
+<!--                android:text="@string/cash"-->
+<!--                android:textColor="@color/dark_blue"-->
+<!--                android:textSize="14sp" />-->
+
+<!--            <com.google.android.material.divider.MaterialDivider-->
+<!--                android:layout_width="2dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_marginTop="2dp"-->
+
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:layout_marginBottom="2dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="70dp"-->
+<!--                android:layout_height="match_parent"-->
+
+<!--                android:background="@drawable/back_fillcolor"-->
+<!--                android:fontFamily="@font/alegreya_sans_bold"-->
+
+<!--                android:gravity="center"-->
+<!--                android:text="@string/copoun"-->
+<!--                android:textColor="@color/dark_blue"-->
+<!--                android:textSize="14sp" />-->
+<!--            <com.google.android.material.divider.MaterialDivider-->
+<!--                android:layout_width="2dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_marginTop="2dp"-->
+
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:layout_marginBottom="2dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="70dp"-->
+<!--                android:layout_height="match_parent"-->
+
+<!--                android:background="@drawable/back_fillcolor"-->
+<!--                android:fontFamily="@font/alegreya_sans_bold"-->
+
+<!--                android:gravity="center"-->
+<!--                android:text="@string/cheque"-->
+<!--                android:textColor="@color/dark_blue"-->
+<!--                android:textSize="14sp" />-->
+<!--            <com.google.android.material.divider.MaterialDivider-->
+<!--                android:layout_width="2dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_marginTop="2dp"-->
+
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:layout_marginBottom="2dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="70dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/back_fillcolor"-->
+<!--                android:fontFamily="@font/alegreya_sans_bold"-->
+
+<!--                android:gravity="center"-->
+<!--                android:text="@string/credit"-->
+<!--                android:textColor="@color/dark_blue"-->
+<!--                android:textSize="14sp" />-->
+<!--            <com.google.android.material.divider.MaterialDivider-->
+<!--                android:layout_width="2dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_marginTop="2dp"-->
+
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:layout_marginBottom="2dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="70dp"-->
+<!--                android:layout_height="match_parent"-->
+
+<!--                android:background="@drawable/back_fillcolor"-->
+<!--                android:fontFamily="@font/alegreya_sans_bold"-->
+
+<!--                android:gravity="center"-->
+<!--                android:text="@string/card1"-->
+<!--                android:textColor="@color/dark_blue"-->
+<!--                android:textSize="14sp" />-->
+<!--            <com.google.android.material.divider.MaterialDivider-->
+<!--                android:layout_width="2dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_marginTop="2dp"-->
+
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:layout_marginBottom="2dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="70dp"-->
+<!--                android:layout_height="match_parent"-->
+
+<!--                android:background="@drawable/back_fillcolor"-->
+<!--                android:fontFamily="@font/alegreya_sans_bold"-->
+
+<!--                android:gravity="center"-->
+<!--                android:text="@string/card2"-->
+<!--                android:textColor="@color/dark_blue"-->
+<!--                android:textSize="14sp" />-->
+<!--            <com.google.android.material.divider.MaterialDivider-->
+<!--                android:layout_width="2dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_marginTop="2dp"-->
+
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:layout_marginBottom="2dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="70dp"-->
+<!--                android:layout_height="match_parent"-->
+
+<!--                android:background="@drawable/back_fillcolor"-->
+<!--                android:fontFamily="@font/alegreya_sans_bold"-->
+
+<!--                android:gravity="center"-->
+<!--                android:text="@string/net"-->
+<!--                android:textColor="@color/dark_blue"-->
+<!--                android:textSize="14sp" />-->
+<!--            <com.google.android.material.divider.MaterialDivider-->
+<!--                android:layout_width="2dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_marginTop="2dp"-->
+
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:layout_marginBottom="2dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="70dp"-->
+<!--                android:layout_height="match_parent"-->
+
+<!--                android:background="@drawable/back_fillcolor"-->
+<!--                android:fontFamily="@font/alegreya_sans_bold"-->
+
+<!--                android:gravity="center"-->
+<!--                android:text="@string/discount"-->
+<!--                android:textColor="@color/dark_blue"-->
+<!--                android:textSize="14sp" />-->
+
+<!--        </LinearLayout>-->
+<!--            <com.google.android.material.divider.MaterialDivider-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="2dp"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_marginTop="2dp"-->
+
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:layout_marginBottom="10dp" />-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/dis_detail_recycle"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="250dp"-->
+<!--                android:padding="3dp"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />-->
+<!--            </LinearLayout>-->
+<!--        </HorizontalScrollView>-->
+
+
+<!--    </LinearLayout>-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/back_fillcolor"-->
+
+<!--            android:fontFamily="@font/alegreya_sans_bold"-->
+<!--            android:gravity="center"-->
+<!--            android:text="@string/payIn"-->
+
+<!--            android:textColor="@color/dark_blue"-->
+<!--            android:textSize="14sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/payIn"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:focusable="false"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:padding="2dp"-->
+<!--            android:text="#00.000"-->
+<!--            android:textColor="@color/dark_blue"-->
+<!--            android:textSize="14sp" />-->
+
+
+<!--    </LinearLayout>-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/back_fillcolor"-->
+
+<!--            android:fontFamily="@font/alegreya_sans_bold"-->
+<!--            android:gravity="center"-->
+<!--            android:text="@string/payOut"-->
+
+<!--            android:textColor="@color/dark_blue"-->
+<!--            android:textSize="14sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/payOut"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:focusable="false"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:padding="2dp"-->
+<!--            android:text="#00.000"-->
+<!--            android:textColor="@color/dark_blue"-->
+<!--            android:textSize="14sp" />-->
+
+
+<!--    </LinearLayout>-->
+
+</LinearLayout>
+<!--</layout>-->

@@ -12,6 +12,18 @@
     <string name="person">Person</string>
     <string name="user">User</string>
     <string name="voucherType">Type</string>
-<!--    <string name="voucherType">Voucher Type</string>-->
+    <string name="cash">Cash</string>
+    <string name="copoun">Copoun</string>
+    <string name="cheque">Cheque</string>
+    <string name="credit">Credit</string>
+    <string name="card1">Card1</string>
+    <string name="card2">Card2</string>
+    <string name="net">Net</string>
+    <string name="discount">Discount</string>
+
+
+    <string name="payOut">Pay Out</string>
+    <string name="payIn">Pay In</string>
+    <!--    <string name="voucherType">Voucher Type</string>-->
 
 </resources>

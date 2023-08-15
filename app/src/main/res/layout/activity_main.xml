@@ -160,7 +160,7 @@
             android:visibility="visible">
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/grouprepCard"
+                android:id="@+id/daily_salesCard"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:background="@android:color/white"
@@ -178,7 +178,7 @@
                     android:fontFamily="@font/alegreya"
                     android:gravity="center"
                     android:lineHeight="34dp"
-                    android:text=""
+                    android:text="Daily Sales"
                     android:textColor="@color/primarytextcolor"
                     android:textSize="20sp"
                     android:textStyle="bold" />

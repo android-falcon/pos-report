@@ -36,7 +36,7 @@ import org.json.JSONObject;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-    MaterialCardView soldqtyrepCard, grouprepCard, cashrepCard, mostsalesepCard,reservationCard;
+    MaterialCardView soldqtyrepCard, daily_salesCard, cashrepCard, mostsalesepCard,reservationCard;
     ConstraintLayout ipSettings_layout;
 
     public final static String IP_SETTINGS = "IP_SETTINGS";
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     public final static String VHFTYPE = "VHFTYPE";
     private JSONArray arrayReservation;
     private String ipAddress, coNo;
-    GeneralMethod generalMethod;
+//    GeneralMethod generalMethod;
     int  mHour, mMinute;
 //    ImportData importData;
 
@@ -226,17 +226,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     void init() {
-        generalMethod = new GeneralMethod(MainActivity.this, MainActivity.this);
-        generalMethod.setWindow();
+//        generalMethod = new GeneralMethod(MainActivity.this, MainActivity.this);
+//        generalMethod.setWindow();
         soldqtyrepCard = findViewById(R.id.soldqtyrepCard);
-        grouprepCard = findViewById(R.id.grouprepCard);
+        daily_salesCard = findViewById(R.id.daily_salesCard);
         cashrepCard = findViewById(R.id.cashrepCard);
         mostsalesepCard = findViewById(R.id.mostsalesepCard);
         ipSettings_layout = findViewById(R.id.ipSettings_layout);
         reservationCard= findViewById(R.id.reservationCard);
         reservationCard.setOnClickListener(onClickListener);
         soldqtyrepCard.setOnClickListener(onClickListener);
-        grouprepCard.setOnClickListener(onClickListener);
+        daily_salesCard.setOnClickListener(onClickListener);
         cashrepCard.setOnClickListener(onClickListener);
         mostsalesepCard.setOnClickListener(onClickListener);
 
@@ -254,8 +254,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent1);
                     break;
 //
-//                case R.id.grouprepCard:
-//                    Intent intent2 = new Intent(MainActivity.this, GroupReport.class);
+//                case R.id.daily_salesCard:
+//                    Intent intent2 = new Intent(MainActivity.this, DailySalesReport.class);
 //                    startActivity(intent2);
 //                    break;
 //
