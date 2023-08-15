@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="5dp"
     android:orientation="vertical">
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/blue"
-        android:textSize="30sp"
-        android:textStyle="bold"
         android:gravity="center"
-        android:text="@string/TimeReport" />
+        android:text="@string/TimeReport"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:textColor="@color/blue"
-        android:textSize="30sp"
-        android:textStyle="bold"
         android:layout_margin="5dp"
+        android:background="@drawable/back_fillcolor"
+        android:gravity="center"
+        android:textColor="@color/blue"
 
-        android:background="@color/blue"
-        android:gravity="center" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="4dp"
+        android:padding="0dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -51,7 +54,7 @@
                 android:layout_weight="0"
 
                 android:text="From Date"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -63,7 +66,8 @@
                 android:gravity="center"
                 android:text="08/09/2023"
                 android:padding="5dp"
-                android:background="@drawable/back_border"
+                android:layout_margin="3dp"
+                android:background="@drawable/edt_style"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
         </TableRow>
@@ -80,7 +84,7 @@
                 android:layout_weight="0"
 
                 android:text="To Date"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -92,7 +96,8 @@
                 android:gravity="center"
                 android:text="08/09/2023"
                 android:padding="5dp"
-                android:background="@drawable/back_border"
+                android:layout_margin="3dp"
+                android:background="@drawable/edt_style"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
         </TableRow>
@@ -103,7 +108,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="4dp"
+        android:padding="0dp"
         android:gravity="center"
         android:orientation="horizontal">
         <CheckBox
@@ -124,7 +129,7 @@
 
                 android:textStyle="bold"
                 android:text="From Time"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="16sp" />
 
             <TextView
@@ -135,8 +140,9 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="08:09:20"
+                android:layout_margin="3dp"
                 android:padding="5dp"
-                android:background="@drawable/back_border"
+                android:background="@drawable/edt_style"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
         </TableRow>
@@ -154,7 +160,7 @@
 
                 android:textStyle="bold"
                 android:text="To Time"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="16sp" />
 
             <TextView
@@ -165,7 +171,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="08:09:20"
-                android:background="@drawable/back_border"
+                android:layout_margin="3dp"
+                android:background="@drawable/edt_style"
                 android:textColor="@color/black"
                 android:padding="5dp"
                 android:textSize="14sp" />
@@ -176,7 +183,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="4dp"
+        android:padding="0dp"
         android:gravity="center"
         android:orientation="horizontal">
         <CheckBox
@@ -196,7 +203,7 @@
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:text="Employ Name "
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="16sp" />
 
             <EditText
@@ -204,7 +211,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/back_border"
+                android:background="@drawable/back_fillcolor"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textPersonName"
@@ -217,7 +224,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/yellow_btn"
+                android:background="@drawable/back_fillcolor"
                 app:srcCompat="@drawable/ic_baseline_search_24" />
         </TableRow>
 
@@ -226,7 +233,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="4dp"
+        android:padding="0dp"
         android:gravity="center"
         android:orientation="horizontal">
         <CheckBox
@@ -246,7 +253,7 @@
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:text="POS NO "
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="16sp" />
 
             <Spinner
@@ -256,6 +263,18 @@
                 android:background="@drawable/back_border"
                 android:layout_height="wrap_content" />
 
+
+            <TextView
+                android:id="@+id/show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:background="@drawable/yellow_btn"
+                android:text="Show"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 <!--            <EditText-->
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
@@ -279,11 +298,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
 
         <TableRow
             android:layout_width="match_parent"
-            android:background="@color/blue"
+            android:background="@drawable/back_fillcolor"
             android:layout_height="wrap_content" >
 
             <TextView
@@ -291,7 +311,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/back_border"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="Emp No"
@@ -303,10 +322,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/back_border"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="Emo Name"
+                android:text="Emp Name"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
@@ -315,7 +333,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/back_border"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="Trance Date"
@@ -327,7 +344,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/back_border"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="Trance Time"
@@ -339,7 +355,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/back_border"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="Action"
@@ -351,7 +366,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/back_border"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="POS No"
@@ -371,31 +385,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:visibility="gone">
 
         <TextView
             android:id="@+id/exit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/yellow_btn"
             android:gravity="center"
             android:padding="10dp"
-            android:background="@drawable/yellow_btn"
             android:text="Exit"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/show"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="10dp"
-            android:background="@drawable/yellow_btn"
-            android:text="Show"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+
     </LinearLayout>
 
 </LinearLayout>

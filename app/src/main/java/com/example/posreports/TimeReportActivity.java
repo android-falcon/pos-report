@@ -31,6 +31,7 @@ import com.example.posreports.Model.TimeReortModel;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class TimeReportActivity extends AppCompatActivity {
 TextView FDate,TDate,FTime,TTime,exit,show;
@@ -302,7 +303,7 @@ TextView FDate,TDate,FTime,TTime,exit,show;
 
 
         for(int i=0;i<ListSearch.size();i++){
-            if(ListSearch.get(i).getUSERNAME().contains(editT)||ListSearch.get(i).getUSERNO().contains(editT)){
+            if(ListSearch.get(i).getUSERNAME().toUpperCase().contains(editT.toUpperCase())||ListSearch.get(i).getUSERNO().toUpperCase().contains(editT.toUpperCase())){
                 tempList.add(ListSearch.get(i));
             }
         }

@@ -771,6 +771,8 @@ public class ImportJson {
 
             } else {
                 Log.e("TAG_GetStor", "****Failed to export data");
+                TimeReportActivity captionLayout = (TimeReportActivity) context;
+                captionLayout.fillArrayDataAfterFilter(new ArrayList<TimeReortModel> ());
 //                if (!JsonResponse.contains("<title>Title of the document</title>")) {
                 if (pd != null) {
                     pd.dismiss();
@@ -816,7 +818,7 @@ public class ImportJson {
             }
 
             pd.getProgressHelper().setBarColor(Color.parseColor("#FDD835"));
-            pd.setTitleText(context.getResources().getString(R.string.getCaption));
+            pd.setTitleText(context.getResources().getString(R.string.getData));
 
         }
 
