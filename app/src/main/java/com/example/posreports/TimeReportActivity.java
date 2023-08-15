@@ -214,7 +214,7 @@ TextView FDate,TDate,FTime,TTime,exit,show;
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
 
-                        textView.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                        textView.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
                     }
                 }, mYear, mMonth, mDay);
