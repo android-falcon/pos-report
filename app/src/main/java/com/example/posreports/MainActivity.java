@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
         generalMethod.setWindow();
         soldqtyrepCard = findViewById(R.id.soldqtyrepCard);
         grouprepCard = findViewById(R.id.grouprepCard);
-        cashrepCard = findViewById(R.id.cashrepCard);
+        cashrepCard = findViewById(R.id.dailyReport);
         mostsalesepCard = findViewById(R.id.mostsalesepCard);
         ipSettings_layout = findViewById(R.id.ipSettings_layout);
         reservationCard= findViewById(R.id.reservationCard);
@@ -260,10 +260,10 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent2);
                     break;
 //
-//                case R.id.cashrepCard:
-//                    Intent intent3 = new Intent(MainActivity.this, CashReport.class);
-//                    startActivity(intent3);
-//                    break;
+                case R.id.dailyReport:
+                    Intent intent3 = new Intent(MainActivity.this, dailyActiveReport.class);
+                    startActivity(intent3);
+                    break;
 //
 //                case R.id.mostsalesepCard:
 //                    Intent intent4 = new Intent(MainActivity.this, MostRecentSalesReport.class);

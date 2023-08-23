@@ -16,6 +16,7 @@ import com.example.posreports.Model.CaptionItemInfo;
 import com.example.posreports.Model.EmployModel;
 import com.example.posreports.Model.GetCaptionModel;
 import com.example.posreports.Model.POSModel;
+import com.example.posreports.Model.SalesManModel;
 import com.example.posreports.Model.TimeReortModel;
 import com.example.posreports.Model.TransactionModel;
 
@@ -39,7 +40,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 public class ImportJson {
 
     private Context context;
-    SweetAlertDialog pd;
+    SweetAlertDialog pd,pd1,pd2;
     String I1,I2,I3,I4,I5,I6,I7,I8,I9,I10,I11,I12,I13,I14,ITEMOCODEs;
 
     String ip, CoNo;
@@ -116,12 +117,73 @@ public class ImportJson {
 
     }
 
+void getSalesMan(){
+        new getSalesMan().execute();
+}
 
     public void getFilter() {
         new getCaptionData().execute();
     }
 
-    public void getData() {
+    public void getData(String  dDate1,String dDate2,String iKind,String bGroup, String bSub1, String bSub2,String bSub3,String bSub4, String bSub5,String bSub6,String bSub7,String sGroup,String sSub1,String sSub2,
+                        String sSub3,
+                        String sSub4,
+                        String sSub5,
+                        String sSub6,
+                        String sSub7,
+                        String sUserNo,
+                        String sGrp,
+                        String sUnit,
+                        String sKind,
+                        String sItemCode,
+                        String sLoc,
+                        String sModal,
+                        String sSubGrp,
+                        String sDiv,
+                        String PosNo,
+                        String bByPrc,
+                        String FrmPrc,
+                        String ToPrc,
+                        String bSoldByDifPrc,
+                        String iPriceK,
+                        String OFFERNO,
+                        String OFFERNAME,
+                        String BISKIT,
+                        String SALESNO,
+                        String POSNOSTR) {
+
+
+
+        this.dDate1=dDate1; this.dDate2=dDate2; this.iKind=iKind;this. bGroup=bGroup; this.bSub1=bSub1; this.bSub2=bSub2; this.bSub3=bSub3; this.bSub4=bSub4; this.bSub5=bSub5; this.bSub6=bSub6;this. bSub7=bSub7;this. sGroup=sGroup; this.sSub1=sSub1; this.sSub2=sSub2;
+                this. sSub3=sSub3;
+                this. sSub4=sSub4;
+                this. sSub5=sSub5;
+                this. sSub6=sSub6;
+                this. sSub7=sSub7;
+                this. sUserNo=sUserNo;
+                this. sGrp=sGrp;
+                this. sUnit=sUnit;
+                this. sKind=sKind;
+                this. sItemCode=sItemCode;
+                this. sLoc=sLoc;
+                this. sModal=sModal;
+                this. sSubGrp=sSubGrp;
+                this. sDiv=sDiv;
+                this. PosNo=PosNo;
+                this. bByPrc=bByPrc;
+                this. FrmPrc=FrmPrc;
+                this. ToPrc=ToPrc;
+                this. bSoldByDifPrc=bSoldByDifPrc;
+                this. iPriceK=iPriceK;
+                this. OFFERNO=OFFERNO;
+                this. OFFERNAME=OFFERNAME;
+                this. BISKIT=BISKIT;
+                this. SALESNO=SALESNO;
+                this. POSNOSTR=POSNOSTR;
+
+
+
+
         new getDataFiltersOnline().execute();
     }
 
@@ -340,6 +402,184 @@ public class ImportJson {
         }
     }
 
+    private class getSalesMan extends AsyncTask<String, String, String> {
+        private String JsonResponse = null;
+        private HttpURLConnection urlConnection = null;
+        private BufferedReader reader = null;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+//            progressDialog = new ProgressDialog(context,R.style.MyTheme);
+//            progressDialog.setCancelable(false);
+//            progressDialog.setMessage("Loading...");
+//            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+//            progressDialog.setProgress(0);
+//            progressDialog.show();
+
+            try {
+
+                pd2 = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
+                pd2.getProgressHelper().setBarColor(Color.parseColor("#FDD835"));
+                pd2.setTitleText(context.getResources().getString(R.string.importData));
+                pd2.setCancelable(false);
+                pd2.show();
+            } catch (Exception e) {
+
+            }
+
+            pd2.getProgressHelper().setBarColor(Color.parseColor("#FDD835"));
+            pd2.setTitleText(context.getResources().getString(R.string.getCaption));
+
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            try {
+
+
+                String link = "http://" + ip + "/GetSalesMan";
+
+
+                String data = "Cono=" + URLEncoder.encode(CoNo, "UTF-8");
+
+                URL url = new URL(link);
+
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+                httpURLConnection.setRequestMethod("POST");
+
+
+                Log.e("captionurlC", " ==> " + link + "?" + data);
+                DataOutputStream wr = new DataOutputStream(httpURLConnection.getOutputStream());
+                wr.writeBytes(data);
+                wr.flush();
+                wr.close();
+
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+
+                StringBuffer stringBuffer = new StringBuffer();
+
+                while ((JsonResponse = bufferedReader.readLine()) != null) {
+                    stringBuffer.append(JsonResponse + "\n");
+                }
+
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+
+                Log.e("tag", "GetCaption -->" + stringBuffer.toString());
+
+                return stringBuffer.toString();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (urlConnection != null) {
+                    urlConnection.disconnect();
+                }
+                if (reader != null) {
+                    try {
+                        reader.close();
+                    } catch (final IOException e) {
+                        Log.e("tag", "Error closing stream", e);
+                    }
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String JsonResponse) {
+            super.onPostExecute(JsonResponse);
+
+            //[{"SALESNO":"7302","SALESNAME":"MOH'D ABIALHIJA","ADDRESS":"","COUNTRY":"","CITY":"","POBOX":"","ZIPCODE":"","EMAIL":"","TEL":"","MOBILE":"","DISCOUNTPER":"0","VDate":"04\/07\/2021","SALESMANPASSWORD":"","POSNO":"-1","INDATE":"04\/07\/2021 11:41:39 ص","INACTIVE":"0","COMM":"0"}]
+
+//            JsonResponse = "[{\"SALESNO\":\"7302\",\"SALESNAME\":\"MOH'D ABIALHIJA\",\"ADDRESS\":\"\",\"COUNTRY\":\"\",\"CITY\":\"\",\"POBOX\":\"\",\"ZIPCODE\":\"\",\"EMAIL\":\"\",\"TEL\":\"\",\"MOBILE\":\"\",\"DISCOUNTPER\":\"0\",\"VDate\":\"04\\/07\\/2021\",\"SALESMANPASSWORD\":\"\",\"POSNO\":\"-1\",\"INDATE\":\"04\\/07\\/2021 11:41:39 ص\",\"INACTIVE\":\"0\",\"COMM\":\"0\"}]";
+            if (JsonResponse != null && JsonResponse.contains("SALESNO")) {
+                Log.e("CAPTION", "****Success");
+
+                pd2.getProgressHelper().setBarColor(Color.parseColor("#1F6301"));
+                pd2.setTitleText(context.getResources().getString(R.string.getData));
+                try {
+
+                    List<SalesManModel> ITEM = new ArrayList<>();
+                    JSONArray jsonArray = new JSONArray(JsonResponse);
+//                    JSONArray parentArray = jsonObject.getJSONArray("CAPTION");
+                    List<String>array=new ArrayList<>();
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+
+                        JSONObject finalObject = jsonArray.getJSONObject(i);
+
+                        SalesManModel obj = new SalesManModel();
+
+                        //[{"SALESNO":"7302","SALESNAME":"MOH'D ABIALHIJA","ADDRESS":"","COUNTRY":"","CITY":"","POBOX":"","ZIPCODE":"","EMAIL":"","TEL":"","MOBILE":"","DISCOUNTPER":"0",
+                        // "VDate":"04\/07\/2021","SALESMANPASSWORD":"","POSNO":"-1","INDATE":"04\/07\/2021 11:41:39 ص","INACTIVE":"0","COMM":"0"}
+
+
+                        obj.setADDRESS(finalObject.getString("SALESNO"));
+                        obj.setSALESNAME(finalObject.getString("SALESNAME"));
+                        obj.setCOUNTRY(finalObject.getString("COUNTRY"));
+                        obj.setCITY(finalObject.getString("CITY"));
+                        obj.setPOBOX(finalObject.getString("POBOX"));
+                        obj.setZIPCODE(finalObject.getString("ZIPCODE"));
+                        obj.setEMAIL(finalObject.getString("EMAIL"));
+                        obj.setTEL(finalObject.getString("TEL"));
+                        obj.setMOBILE(finalObject.getString("MOBILE"));
+                        obj.setDISCOUNTPER(finalObject.getString("DISCOUNTPER"));
+                        obj.setSALESMANPASSWORD(finalObject.getString("SALESMANPASSWORD"));
+                        obj.setPOSNO(finalObject.getString("POSNO"));
+                        obj.setINDATE(finalObject.getString("INDATE"));
+                        obj.setINACTIVE(finalObject.getString("INACTIVE"));
+                        obj.setCOMM(finalObject.getString("COMM"));
+
+
+
+                        ITEM.add(obj);
+                        array.add(obj.getSALESNAME());
+
+
+                    }
+
+
+                    pd2.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+                    pd2.setTitleText(context.getResources().getString(R.string.getCaptionSuccesful));
+
+                    ItemTransaction captionLayout = (ItemTransaction) context;
+                    captionLayout.fillSalesFillters(array,ITEM);
+                    pd2.dismiss();
+//                    if (pd != null) {
+//                        pd.dismiss();
+////
+//                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    pd2.dismiss();
+                    Log.e("caption_Error", "Error ==> " + e.toString());
+                }
+
+            } else {
+                Log.e("TAG_GetStor", "****Failed to export data");
+//                if (!JsonResponse.contains("<title>Title of the document</title>")) {
+                if (pd2 != null) {
+                    pd2.dismiss();
+                }
+//                }else{
+                Toast.makeText(context, "no Parameter", Toast.LENGTH_SHORT).show();
+//                    if (pd != null) {
+//                        pd.dismiss();
+//
+//                    }
+//                }
+            }
+
+
+        }
+    }
 
     private class getDataFiltersOnline extends AsyncTask<String, String, String> {
         private String JsonResponse = null;
@@ -532,14 +772,59 @@ public class ImportJson {
 
                         TransactionModel captionItemInfo = new TransactionModel();
 //{"AccCode":"0","ItemNCode":"7708800120","ItemOCode":"7708800120","ItemNameA":"SUIT WOLL","ItemNameE":"SUIT WOLL","InDate":"18\/04\/2023","F_D":"200","AVLQTY":"1"}
-//                        captionItemInfo.setItemNCode(finalObject.getString("ItemNCode"));
-//                        captionItemInfo.setAccCode(finalObject.getString("AccCode"));
-//                        captionItemInfo.setItemOCode(finalObject.getString("ItemOCode"));
-//                        captionItemInfo.setInDate(finalObject.getString("InDate"));
-//                        captionItemInfo.setItemNameA(finalObject.getString("ItemNameA"));
-//                        captionItemInfo.setItemNameE(finalObject.getString("ItemNameE"));
-//                        captionItemInfo.setF_D(finalObject.getString("F_D"));
-//                        captionItemInfo.setAVLQTY(finalObject.getString("AVLQTY"));
+
+
+                        //  private  String TRANSKIND;
+                        //    private  String POSN;
+                        //    private  String VHFDATE;
+                        //    private  String VHFTIM;
+                        //    private  String VHFI;
+                        //    private  String ITEMOCODE;
+                        //    private  String ITEMONAMEA;
+                        //    private  String PRICE;
+                        //    private  String PQTY;
+                        //    private  String TOTAL;
+                        //    private  String NETBEFORDIS;
+                        //    private  String NETAFTERDIS;
+                        //    private  String TAXABLE;
+                        //    private  String AVGCOSTPRICE;
+                        //    private  String USERNO;
+                        //    private  String ITEMG;
+                        //    private  String TAXAMT;
+                        //    private  String DISCOUNT;
+                        //    private  String IOQTY;
+                        //    private  String PRICEKIND;
+                        //    private  String OFFERNO;
+                        //    private  String OFFERNAME;
+                        //    private  String ISKIT;
+                        //    private  String COSTUMERNO;
+                        //    private  String COSTUMERNAME;
+                        //    private  String CONO;
+                        captionItemInfo.setTRANSKIND(finalObject.getString("TRANSKIND"));
+                        captionItemInfo.setPOSN(finalObject.getString("POSN"));
+                        captionItemInfo.setVHFDATE(finalObject.getString("VHFDATE"));
+                        captionItemInfo.setVHFTIM(finalObject.getString("VHFTIM"));
+                        captionItemInfo.setITEMOCODE(finalObject.getString("ITEMOCODE"));
+                        captionItemInfo.setITEMONAMEA(finalObject.getString("ITEMONAMEA"));
+                        captionItemInfo.setPRICE(finalObject.getString("PRICE"));
+                        captionItemInfo.setPQTY(finalObject.getString("PQTY"));
+                        captionItemInfo.setTOTAL(finalObject.getString("TOTAL"));
+                        captionItemInfo.setNETBEFORDIS(finalObject.getString("NETBEFORDIS"));
+                        captionItemInfo.setNETAFTERDIS(finalObject.getString("NETAFTERDIS"));
+                        captionItemInfo.setTAXABLE(finalObject.getString("TAXABLE"));
+                        captionItemInfo.setAVGCOSTPRICE(finalObject.getString("AVGCOSTPRICE"));
+                        captionItemInfo.setUSERNO(finalObject.getString("USERNO"));
+                        captionItemInfo.setITEMG(finalObject.getString("ITEMG"));
+                        captionItemInfo.setTAXAMT(finalObject.getString("TAXAMT"));
+                        captionItemInfo.setDISCOUNT(finalObject.getString("DISCOUNT"));
+                        captionItemInfo.setIOQTY(finalObject.getString("IOQTY"));
+                        captionItemInfo.setPRICEKIND(finalObject.getString("PRICEKIND"));
+                        captionItemInfo.setOFFERNAME(finalObject.getString("OFFERNAME"));
+                        captionItemInfo.setOFFERNO(finalObject.getString("OFFERNO"));
+                        captionItemInfo.setISKIT(finalObject.getString("ISKIT"));
+                        captionItemInfo.setCOSTUMERNO(finalObject.getString("COSTUMERNO"));
+                        captionItemInfo.setCOSTUMERNAME(finalObject.getString("COSTUMERNAME"));
+                        captionItemInfo.setCONO(finalObject.getString("CONO"));
 
                         //"ITEMUNIT": "",
                         ////        "ITEMGROUP": "BLUES",
@@ -966,17 +1251,17 @@ public class ImportJson {
 
             try {
 
-                pd = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
-                pd.getProgressHelper().setBarColor(Color.parseColor("#FDD835"));
-                pd.setTitleText(context.getResources().getString(R.string.importData));
-                pd.setCancelable(false);
-                pd.show();
+                pd1 = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
+                pd1.getProgressHelper().setBarColor(Color.parseColor("#FDD835"));
+                pd1.setTitleText(context.getResources().getString(R.string.importData));
+                pd1.setCancelable(false);
+                pd1.show();
             } catch (Exception e) {
 
             }
 
-            pd.getProgressHelper().setBarColor(Color.parseColor("#FDD835"));
-            pd.setTitleText(context.getResources().getString(R.string.getCaption));
+            pd1.getProgressHelper().setBarColor(Color.parseColor("#FDD835"));
+            pd1.setTitleText(context.getResources().getString(R.string.getCaption));
 
         }
 
@@ -1047,8 +1332,8 @@ public class ImportJson {
         if (JsonResponse != null && JsonResponse.contains("POSNO")) {
                 Log.e("CAPTION", "****Success");
 
-                pd.getProgressHelper().setBarColor(Color.parseColor("#1F6301"));
-                pd.setTitleText(context.getResources().getString(R.string.getData));
+                pd1.getProgressHelper().setBarColor(Color.parseColor("#1F6301"));
+                pd1.setTitleText(context.getResources().getString(R.string.getData));
 
                 List<POSModel> ITEM = new ArrayList<>();
                 List<String> posNameList=new ArrayList<>();
@@ -1078,22 +1363,46 @@ public class ImportJson {
 
 
 
-                pd.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                pd.setTitleText(context.getResources().getString(R.string.getCaptionSuccesful));
+                pd1.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+                pd1.setTitleText(context.getResources().getString(R.string.getCaptionSuccesful));
 
-                TimeReportActivity captionLayout = (TimeReportActivity) context;
-                captionLayout.fillSpinerPOsNo(posNameList,ITEM);
-                pd.dismiss();
-//                    if (pd != null) {
-//                        pd.dismiss();
-////
-//                    }
+                try {
+                    TimeReportActivity captionLayout = (TimeReportActivity) context;
+                    captionLayout.fillSpinerPOsNo(posNameList, ITEM);
+
+                }catch (Exception e){
+
+                }
+
+
+            try {
+                ItemTransaction captionLayout = (ItemTransaction) context;
+                captionLayout.fillSpinerPOsNo(posNameList, ITEM);
+
+            }catch (Exception e){
+
+            }
+
+
+            try {
+                dailyActiveReport captionLayout = (dailyActiveReport) context;
+                captionLayout.fillSpinerPOsNo(posNameList, ITEM);
+
+            }catch (Exception e){
+
+            }
+
+                pd1.dismiss();
+                    if (pd1 != null) {
+                        pd1.dismiss();
+//
+                    }
 
             } else {
                 Log.e("TAG_GetStor", "****Failed to export data");
 //                if (!JsonResponse.contains("<title>Title of the document</title>")) {
-                if (pd != null) {
-                    pd.dismiss();
+                if (pd1 != null) {
+                    pd1.dismiss();
                 }
 //                }else{
                 Toast.makeText(context, "no Parameter", Toast.LENGTH_SHORT).show();

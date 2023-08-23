@@ -22,14 +22,16 @@
         <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/drawable/scrollbar_vertical_thumb.xml" value="0.1" />
         <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/drawable/show_btn.xml" value="0.1" />
         <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/drawable/yellow_btn.xml" value="0.1" />
+        <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/layout/activity_item_dialy_sales_report.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/layout/activity_item_transaction.xml" value="0.2" />
         <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/layout/caption_item_row.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/layout/dialy_report_activity.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/layout/employ_dialog.xml" value="0.18" />
         <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/layout/ip_settings_dialog.xml" value="0.2" />
         <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/layout/item_emp_row.xml" value="0.2" />
         <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/layout/item_time_row.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/layout/item_trans_report.xml" value="0.1" />
+        <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/layout/item_trans_report.xml" value="0.22" />
         <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/layout/item_trans_row4.xml" value="0.203125" />
         <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/layout/item_transaction_report.xml" value="0.287109375" />
         <entry key="..\:/Users/mr gamer/AndroidStudioProjects/pos-report3/app/src/main/res/layout/spinner_style.xml" value="0.1" />

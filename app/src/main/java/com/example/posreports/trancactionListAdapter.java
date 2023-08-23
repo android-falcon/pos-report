@@ -47,7 +47,7 @@ public class trancactionListAdapter extends BaseAdapter {
     }
 
     private class ViewHolder {
-        TextView date, time,price,avlQty,trancNo,trancType,itemNo,itemName,qty,price_t,totalBT,user;//,i9,i10,i11,i12,i13,i14;//, price
+        TextView date, time,price,avlQty,trancNo,trancType,itemNo,itemName,qty,price_t,totalBT,user,priceAT;//,i9,i10,i11,i12,i13,i14;//, price
     }
 
     @Override
@@ -65,8 +65,9 @@ public class trancactionListAdapter extends BaseAdapter {
         holder.itemNo = (TextView) view.findViewById(R.id.itemNo);
         holder.itemName = (TextView) view.findViewById(R.id.itemName);
         holder.qty = (TextView) view.findViewById(R.id.qty);
-        holder.price_t = (TextView) view.findViewById(R.id.price);
+//        holder.price_t = (TextView) view.findViewById(R.id.price);
         holder.totalBT = (TextView) view.findViewById(R.id.totalBT);
+        holder.priceAT=view.findViewById(R.id.priceAT);
         holder.user = (TextView) view.findViewById(R.id.user);
 //        holder.i9 = (TextView) view.findViewById(R.id.i9);
 //        holder.i10 = (TextView) view.findViewById(R.id.i10);
@@ -80,20 +81,19 @@ public class trancactionListAdapter extends BaseAdapter {
 //        holder.price.setText("" + itemsList.get(i).getF_D());
 //        holder.avlQty.setText("" + itemsList.get(i).getAVLQTY());
 //
-//        holder.i1.setText("" + itemsList.get(i).getITEMUNIT());
-//        holder.i2.setText("" + itemsList.get(i).getITEMGROUP());
-//        holder.i3.setText("" + itemsList.get(i).getITEMCOLOR());
-//        holder.i4.setText("" + itemsList.get(i).getITEMSIZE());
-//        holder.i5.setText("" + itemsList.get(i).getITEMMODEL());
-//        holder.i6.setText("" + itemsList.get(i).getITEMGS());
-//        holder.i7.setText("" + itemsList.get(i).getITEMDIV());
-//        holder.i8.setText("" + itemsList.get(i).getITEMSUB1());
-//        holder.i9.setText("" + itemsList.get(i).getITEMSUB2());
-//        holder.i10.setText("" + itemsList.get(i).getITEMSUB3());
-//        holder.i11.setText("" + itemsList.get(i).getITEMSUB4());
-//        holder.i12.setText("" + itemsList.get(i).getITEMSUB5());
-//        holder.i13.setText("" + itemsList.get(i).getITEMSUB6());
-//        holder.i14.setText("" + itemsList.get(i).getITEMSUB7());
+        holder.date.setText("" + itemsList.get(i).getVHFDATE());
+        holder.itemName.setText("" + itemsList.get(i).getITEMONAMEA());
+        holder.time.setText("" + itemsList.get(i).getVHFTIM());
+        holder.price.setText("" + itemsList.get(i).getPRICE());
+        holder.trancNo.setText("" + itemsList.get(i).getVHFI());
+        holder.trancType.setText("" + itemsList.get(i).getTRANSKIND());
+        holder.itemNo.setText("" + itemsList.get(i).getITEMOCODE());
+        holder.qty.setText("" + itemsList.get(i).getPQTY());
+//        holder.price_t.setText("" + itemsList.get(i).getPRICEKIND());
+        holder.totalBT.setText("" + itemsList.get(i).getNETBEFORDIS());
+        holder.priceAT.setText("" + itemsList.get(i).getNETAFTERDIS());
+        holder.user.setText("" + itemsList.get(i).getUSERNO());
+
 
         return view;
     }

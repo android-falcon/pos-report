@@ -25,6 +25,11 @@
         </activity>
         <activity android:name=".TimeReportActivity"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"/>
+
+        <activity android:name=".dailyActiveReport"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"/>
     </application>
+
+
 
 </manifest>
